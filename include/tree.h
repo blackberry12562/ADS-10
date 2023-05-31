@@ -2,6 +2,7 @@
 #ifndef INCLUDE_TREE_H_
 #define INCLUDE_TREE_H_
 #include <vector>
+
 class Tree {
  private:
     char value;
@@ -16,6 +17,7 @@ class Tree {
             child->add(child, tmp);
         }
     }
+
  public:
     explicit Tree(std::vector<char> value) {
         Tree* root = new Tree('r');
@@ -28,12 +30,7 @@ class Tree {
         return childs.size();
     }
     Tree* getChild(int n) const {
-        for (int i = 0; i < childs.size(); i++) {
-            if (i == n) {
-                return childs[i];
-                break;
-            }
-        }
+        return childs[n];
     }
 };
 #endif  // INCLUDE_TREE_H_
